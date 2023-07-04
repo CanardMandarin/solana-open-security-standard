@@ -8,7 +8,9 @@ sidebar_position: 1
 
 This document is free and open to anyone interested in Solana programs security. SOSS aims to educate Solana developers and organizations about security and the consequence of weaknesses. 
 
-*Note: **Solana Open Security Standard** should remain neutral and free from any commercial pressure. This is why SOSS will never endorse or recommend specific products or services.*
+:::note
+**Solana Open Security Standard** should remain neutral and free from any commercial pressure. This is why SOSS will never endorse or recommend specific products or services.
+:::
 
 # Terminology 
 
