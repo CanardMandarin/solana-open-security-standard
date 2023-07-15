@@ -1,5 +1,4 @@
 ---
-sidebar_position: 1
 ---
 
 # Introduction
@@ -22,11 +21,11 @@ The security risks within Solana programs have been ranked based on the assessme
 
 **# 03 - Arithmetic:** Ranked third, the Arithmetic class shows a moderate occurrence and incidence rate. Although not as prevalent as the Logic Bug or Account Validation classes, vulnerabilities within the Arithmetic class can still pose security risks that need attention. Proper handling of mathematical operations is essential to prevent computational errors and ensure the integrity of calculations.
 
-**# 04 - Code Quality:** Ranked fourth, the Code Quality class exhibits a relatively high incidence rate but a low impact. With 29 vulnerabilities identified, this class highlights an aspect of security that is often overlooked. Addressing code complexity, lack of documentation, and other code quality issues is crucial for improving the overall security and maintainability of a Solana program.
+**# 04 - Code Quality:** Ranked fourth, the Code Quality class exhibits a relatively high incidence rate but a low impact. With 29 vulnerabilities identified, this class highlights an aspect that is often overlooked. Addressing code complexity, lack of documentation, and other code quality issues is crucial for improving the overall security and maintainability of a Solana program.
 
 **# 05 - Dependencies:** Ranked fifth, the Dependencies class demonstrates a moderate occurrence. Vulnerabilities within this class arise from deprecated or unaudited external dependencies integrated into a given Solana program. Correctly managing and updating dependencies is essential to mitigate potential risks and vulnerabilities associated with third-party libraries.
 
-**# 06 - Denial of Service:**  Ranked sixth, the Denial of Service class demonstrates a relatively low occurrence. Solana programs, by default, offer upgradeability, enabling developers to address and patch Denial of Service issues. However, for non-upgradable programs, it is crucial to exercise caution as these vulnerabilities have the potential to make a program unusable.
+**# 06 - Denial of Service:**  Ranked sixth, the Denial of Service class demonstrates a relatively low occurrence. Solana programs, by default, are upgradeable, allowing developers to address and patch Denial of Service issues. However, for non-upgradable programs, it is crucial to exercise caution as these vulnerabilities have the potential to make a program unusable.
 
 **# 07 - Economic:** Ranked seventh, the Economic class has a low occurrence and incidence rate. While vulnerabilities within this class are relatively less prevalent, addressing economic-related risks is still important for maintaining the financial integrity of a protocol.
 
