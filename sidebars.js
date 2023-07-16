@@ -32,13 +32,21 @@ const sidebars = {
       id: "call_for_data",
     },
     {
-      type: 'html',
-      value: '<hr />',
+      type: "html",
+      value: "<hr />",
     },
     {
-      type: "doc",
+      type: "category",
       label: "A01 - Logic Bug",
-      id: "A01_logic_bug",
+      link: { type: "doc", id: "A01_logic_bug/index" },
+      items: [
+        "A01_logic_bug/example_1",
+        {
+          type: "link",
+          label: "Patch it! (Coming Soon)",
+          href: "#"
+        }
+      ],
     },
   ],
 };
