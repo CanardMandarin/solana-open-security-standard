@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[237],{9754:(e,t,n)=>{n.r(t),n.d(t,{default:()=>i});var s=n(7294),a=n(2263),c=n(6550);function i(){const{siteConfig:e}=(0,a.Z)();return s.createElement(c.l_,{to:"/solana-open-security-standard/docs/introduction"})}}}]);
