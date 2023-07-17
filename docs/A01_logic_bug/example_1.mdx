@@ -1,0 +1,88 @@
+# Example 1: Orca Whirlpools
+
+## Context
+
+Orca Whirlpools is a concentrated liquidity AMM (Automated Market Maker), a concept known from Uniswap v3. Unlike traditional AMM, liquidity providers can specify a price range over which they provide liquidity, enhancing efficiency and mitigating impermanent loss risks.
+
+<center>
+<figure>
+
+![Alt text](/img/logic_bug/orca.png)
+
+<figcaption>Creating a LP position</figcaption>
+</figure>
+</center>
+
+The following code represents the `open_position` function within the Whirlpools program. 
+It has 3 parameters:
+
+- `whirlpool`: Pool associated to the position
+- `tick_lower_index`: Integer representing the lower boundary of the price range
+- `tick_upper_index`: Integer representing the upper boundary of the price range
+
+```rust showLineNumbers
+    pub fn open_position(
+        &mut self,
+        whirlpool: &Account<Whirlpool>,
+        tick_lower_index: i32,
+        tick_upper_index: i32,
+    ) -> Result<()> {
+        if !Tick::check_is_usable_tick(tick_lower_index, whirlpool.tick_spacing)
+            || !Tick::check_is_usable_tick(tick_upper_index, whirlpool.tick_spacing)
+        {
+            return Err(ErrorCode::InvalidTickIndex.into());
+        }
+
+        self.whirlpool = whirlpool.key();
+        self.tick_lower_index = tick_lower_index;
+        self.tick_upper_index = tick_upper_index;
+        Ok(())
+    }
+```
+
+Before opening the position, the function performs validity checks on both the `tick_lower_index` and `tick_upper_index`. It uses the following `check_is_usable_tick` function to ensure that the provided tick indices are within acceptable limits, given the pool's tick spacing.
+
+
+```rust showLineNumbers
+    pub const MAX_TICK_INDEX: i32 = 443636;
+    pub const MIN_TICK_INDEX: i32 = -443636;
+
+    pub fn check_is_out_of_bounds(tick_index: i32) -> bool {
+        tick_index > MAX_TICK_INDEX || tick_index < MIN_TICK_INDEX
+    }
+
+    pub fn check_is_usable_tick(tick_index: i32, tick_spacing: u16) -> bool {
+        if Tick::check_is_out_of_bounds(tick_index) {
+            return false;
+        }
+
+        tick_index % tick_spacing as i32 == 0
+    }
+```
+
+After passing the tick validity checks, the function update the position's fields and create the position.
+
+## The vulnerability
+
+Given the code above, can you detect a logic bug that the developers missed during the development?
+
+<details>
+<summary>Hint</summary>
+
+Pay close attention to how the **tick_lower_index** and **tick_upper_index** values are handled. Look for any **missing checks or validations** that could allow these values to be manipulated in a way that violates what the developers expected.
+
+</details>
+
+<details>
+<summary>Spoiler</summary>
+
+During the security audit of the Orca Whirlpools program, a vulnerability was discovered in the **open_position** function. It failed to validate whether the **tick_lower_index** was **smaller** than the **tick_upper_index**, allowing attackers to manipulate these values and create positions with invalid price range boundaries. 
+
+This oversight could have potentially resulted in uncovered liquidity and incorrect calculations, posing a significant risk of financial loss for users. To understand the full extent of the vulnerability and its resolution, we strongly advise referring to the comprehensive audit report and examining the Whirlpools program source code.
+
+</details>
+
+## References
+- [Neodyme Audit Report](https://github.com/CanardMandarin/solana-open-security-standard-reports/blob/main/reports/2022-05/Neodyme-Orca_Whirlpool.pdf)
+- [Whirlpool Source Code](https://github.com/orca-so/whirlpools)
+

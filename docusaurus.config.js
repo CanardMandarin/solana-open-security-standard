@@ -1,52 +1,52 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const lightCodeTheme = require("prism-react-renderer/themes/github");
+const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Solana Open Security Standard (SOSS)',
-  tagline: 'Security standard for Solana programs',
-  favicon: 'img/favicon.ico',
+  title: "Solana Open Security Standard (SOSS)",
+  tagline: "Security standard for Solana programs",
+  favicon: "img/favicon.ico",
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-test-site.com',
+  url: "https://your-docusaurus-test-site.com",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: "/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'CanardMandarin', // Usually your GitHub org/user name.
-  projectName: 'Solana Open Security Standard', // Usually your repo name.
+  organizationName: "CanardMandarin", // Usually your GitHub org/user name.
+  projectName: "Solana Open Security Standard", // Usually your repo name.
 
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: "throw",
+  onBrokenMarkdownLinks: "warn",
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: "en",
+    locales: ["en"],
   },
 
   presets: [
     [
-      'classic',
+      "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
+          sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/CanardMandarin/solana-open-security-standard/tree/main/docs',
+            "https://github.com/CanardMandarin/solana-open-security-standard/tree/main/docs",
         },
 
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve("./src/css/custom.css"),
         },
       }),
     ],
@@ -56,11 +56,11 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/banner.jpg',
+      image: "img/banner.jpg",
       navbar: {
         logo: {
-          alt: 'Logo',
-          src: 'img/logo.png',
+          alt: "Logo",
+          src: "img/logo.png",
         },
         items: [
           // {
@@ -70,14 +70,14 @@ const config = {
           //   label: 'Learn',
           // },
           {
-            href: 'https://github.com/CanardMandarin/solana-open-security-standard',
-            label: 'GitHub',
-            position: 'right',
+            href: "https://github.com/CanardMandarin/solana-open-security-standard",
+            label: "GitHub",
+            position: "right",
           },
         ],
       },
       footer: {
-        style: 'dark',
+        style: "dark",
         links: [
           // {
           //   title: 'Docs',
@@ -89,15 +89,15 @@ const config = {
           //   ],
           // },
           {
-            title: 'Links',
+            title: "Links",
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://solana.stackexchange.com/',
+                label: "Stack Overflow",
+                href: "https://solana.stackexchange.com/",
               },
               {
-                label: 'GitHub',
-                href: 'https://github.com/CanardMandarin/solana-open-security-standard',
+                label: "GitHub",
+                href: "https://github.com/CanardMandarin/solana-open-security-standard",
               },
               // TODO create a discord and a twitter?
               // {
@@ -114,6 +114,7 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} Solana Open Security Standard`,
       },
       prism: {
+        additionalLanguages: ["rust"],
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },

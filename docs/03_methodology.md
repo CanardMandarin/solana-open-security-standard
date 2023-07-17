@@ -1,5 +1,4 @@
 ---
-sidebar_position: 2
 ---
 
 # Methodology
@@ -45,7 +44,7 @@ The following classes were established to provide a structured framework for und
 
 ## Scoring (subject to change)
 
-To determine the ranking of the security standard, vulnerability classes are assessed and ranked based on two key properties: **average severity** and **incidence rate**. The scoring process utilizes these properties to compute the score for each subclass or class within the standard.
+To determine the ranking of the security standard, vulnerability classes are assessed and ranked based on two key properties: **average severity** and **incidence rate**. The scoring process utilizes these properties to compute the score for each class within the standard.
 
 The **incidence rate** refers to the percentage of audits that identified at least one occurrence of a vulnerability within a given class. It reflects the prevalence and frequency of vulnerabilities encountered in real-world assessments. Higher incidence rates indicate a higher likelihood of encountering vulnerabilities within that class.
 
