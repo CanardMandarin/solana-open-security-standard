@@ -29,7 +29,7 @@ import { Redirect } from '@docusaurus/router';
 
 export default function Home(): JSX.Element {
   const {siteConfig} = useDocusaurusContext();
-  return <Redirect to="/docs/introduction" />;
+  return <Redirect to="/solana-open-security-standard/docs/introduction" />;
   // return (
   //   <Layout
   //     title={`Hello from ${siteConfig.title}`}
