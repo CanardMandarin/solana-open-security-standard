@@ -48,6 +48,18 @@ const sidebars = {
         }
       ],
     },
+    {
+      type: "category",
+      label: "A02 - Account Validation",
+      link: { type: "doc", id: "A02_account_validation/index" },
+      items: [
+        {
+          type: "link",
+          label: "Patch it! (Coming Soon)",
+          href: "#"
+        }
+      ],
+    },
   ],
 };
 
