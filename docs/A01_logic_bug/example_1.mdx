@@ -76,7 +76,7 @@ Pay close attention to how the **tick_lower_index** and **tick_upper_index** val
 <details>
 <summary>Spoiler</summary>
 
-During the security audit of the Orca Whirlpools program, a vulnerability was discovered in the **open_position** function. It failed to validate whether the **tick_lower_index** was **smaller** than the **tick_upper_index**, allowing attackers to manipulate these values and create positions with invalid price range boundaries. 
+During the security audit of the Whirlpools program, a vulnerability was discovered in the **open_position** function. It failed to validate whether the **tick_lower_index** was **smaller** than the **tick_upper_index**, allowing attackers to manipulate these values and create positions with invalid price range boundaries. 
 
 This oversight could have potentially resulted in uncovered liquidity and incorrect calculations, posing a significant risk of financial loss for users. To understand the full extent of the vulnerability and its resolution, we strongly advise referring to the comprehensive audit report and examining the Whirlpools program source code.
 
