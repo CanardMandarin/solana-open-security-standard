@@ -53,11 +53,10 @@ const sidebars = {
       label: "A02 - Account Validation",
       link: { type: "doc", id: "A02_account_validation/index" },
       items: [
-        {
-          type: "link",
-          label: "Patch it! (Coming Soon)",
-          href: "#"
-        }
+        "A02_account_validation/missing_signer_check",
+        "A02_account_validation/missing_ownership_check",
+        "A02_account_validation/missing_program_validation",
+        "A02_account_validation/account_confusion",
       ],
     },
   ],

@@ -18,6 +18,11 @@
 
 Account Validation vulnerabilities have been categorized into distinct subclasses, each dedicated to specific types of validation issues. Each subclass has its own page, ensuring an in-depth coverage of these vulnerabilities.
 
+1. [Missing Signer Check](./missing_signer_check.md)
+2. [Missing Ownership Check](./missing_ownership_check.md)
+3. [Missing Program Validation](./missing_ownership_check.md)
+4. [Account Confusion](./missing_ownership_check.md)
+
 ## References 
 
 - [Solana Documentation](https://docs.solana.com/developing/programming-model/accounts)
