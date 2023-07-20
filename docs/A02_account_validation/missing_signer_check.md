@@ -1,7 +1,5 @@
 # Missing Signer Check
 
-# Missing Ownership Check
-
 ## Description
 
 Vulnerabilities known as "Missing Signer Check" are security flaws that occur when the validation of a transaction signer is not properly implemented. On the Solana blockchain, transactions are signed by accounts using their corresponding private keys to authorize actions or state modifications. These signatures ensure that only the rightful owner of an account can make changes to its data.
@@ -10,7 +8,7 @@ When a program fails to validate the signer's identity before executing a transa
 
 ## How To Prevent
 
-Preventing "Missing Signer Check" vulnerabilities in Solana programs is straightforward. Developers have to validate the `is_signer` field of the `AccountInfo` struct. With this simple check, developers can ensure that only the rightful owner of an account can execute transactions that will modify critical data.
+Preventing "Missing Signer Check" vulnerabilities in Solana programs is straightforward. Developers have to validate the `is_signer` field of the *[AccountInfo](https://docs.rs/solana-program/latest/solana_program/account_info/struct.AccountInfo.html)* struct. With this simple check, developers can ensure that only the rightful owner of an account can execute transactions that will modify critical data.
 
 :::caution
 Treating accounts as user input is a fundamental principle in building secure and robust Solana programs.
@@ -20,7 +18,7 @@ Treating accounts as user input is a fundamental principle in building secure an
 
 ### Context
 
-In the provided example, we have a Native Solana program that includes an `IdentityAccount` struct and an entrypoint function called `process_instruction`. This function is responsible for managing the program's logic. Let's analyze the program and then explore the consequences of missing the signer check on lines 19 to 21.
+Let's analyze the following Solana program and then explore the consequences of missing the signer check on lines 19 to 21.
 
 ```rust showLineNumbers
 #[derive(BorshSerialize, BorshDeserialize, Debug)]
@@ -49,11 +47,11 @@ pub fn process_instruction(
     }
 
     if identity_account.owner != program_id {
-        return Err(ProgramError::IncorrectProgramId);
+        return Err(ProgramError::IllegalOwner);
     }
 
     let mut identity = IdentityAccount::try_from_slice(&identity_account.data.borrow())?;
-    if signer.key != identity.authority {
+    if *signer.key != identity.authority {
         return Err(ProgramError::InvalidAccountData);
     }
 
@@ -66,7 +64,7 @@ pub fn process_instruction(
 ```
 
 :::info
- The program intentionally omits certain features to keep it small and compact. One crucial feature that is missing is the ability to create an **IdentityAccount** account and set the authority field. Consequently, the provided code assumes that the some **IdentityAccount**  accounts already exists with the authority field appropriately set.
+ The program intentionally omits certain features to keep it small and compact. The provided code assumes that the some **IdentityAccount**  accounts already exists with the authority field appropriately set.
 :::
 
 
@@ -78,15 +76,13 @@ pub fn process_instruction(
 
 3. The program then performs three crucial checks:
 
-    - **Signer Check** (Line 19): It verifies if the signer account is a signer of the transaction by checking the `is_signer` field. If the `is_signer` flag is `false`, the program returns an error with ProgramError::MissingRequiredSignature, indicating that the transaction must be signed to proceed further.
+    - **Signer Check** (Line 19): It verifies if the signer account is a signer of the transaction by checking the `is_signer` field.
 
-    - **Ownership Check** (Line 23): It ensures that the `identity_account` is associated with the correct program by checking if its owner field matches the `program_id``. If the owner doesn't match, the program returns an error with ProgramError::IncorrectProgramId.
+    - **Ownership Check** (Line 23): It ensures that the `identity_account` is associated with the correct program by checking if its owner field matches the `program_id`.
 
-    - **Logic Check** (Line 28): It validates that the signer is the rightful `authority` of the `identity_account`. If the validation fails, the program returns an error with ProgramError::InvalidAccountData.
+    - **Logic Check** (Line 28): It validates that the signer is the rightful `authority` of the `identity_account`.
 
 4. After passing all checks, the program increments the `counter` field of the `IdentityAccount` struct and then serializes it back to the account data.
-
-
 
 :::info
 The **Ownership Check** in the provided code could be omitted, as the Solana runtime inherently ensures that a program cannot modify an account it does not own. 
