@@ -20,8 +20,6 @@ pub struct BankAccount {
     pub authority: Pubkey,
 }
 
-entrypoint!(process_instruction);
-
 pub fn process_instruction(
     program_id: &Pubkey,
     accounts: &[AccountInfo],
@@ -80,13 +78,13 @@ pub fn process_instruction(
 
 3. The program performs several checks to ensure security and proper execution:
 
-    - **Signer Check** (Line 19): It verifies if the signer account is a signer of the transaction by checking the `is_signer`` field.
+    - **Signer Check** (Line 17): It verifies if the signer account is a signer of the transaction by checking the `is_signer`` field.
 
-    - **Ownership Check** (Line 23): It ensures that the `bank_account` is associated with the correct program by checking if its `owner` field matches the program's public key.
+    - **Ownership Check** (Line 21): It ensures that the `bank_account` is associated with the correct program by checking if its `owner` field matches the program's public key.
 
-    - **Address Verification** (Line 28): It verifies that the `vault` account's key matches this address
+    - **Address Verification** (Line 26): It verifies that the `vault` account's key matches this address
 
-    - **Logic Check** (Line 31): It validates that the signer is the rightful `authority` of the `bank_account`.
+    - **Logic Check** (Line 29): It validates that the signer is the rightful `authority` of the `bank_account`.
 
 4. If all checks pass successfully, the program proceeds to transfer all lamports from the `vault` account to the `signer`. 
 
@@ -96,4 +94,4 @@ The **Address Verification** check in the provided code could be omitted, as the
 
 ### Consequence
 
-If the ownership check on lines 23 to 25 was missing, someone could craft a fake `BankAccount` using a another program and set an arbitrary `authority`. This would allow the malicious actor to withdraw the lamports from the vault by passing the forged account `BankAccount`. 
+If the ownership check on lines 21 to 23 was missing, someone could craft a fake `BankAccount` using a another program and set an arbitrary `authority`. This would allow the malicious actor to withdraw the lamports from the vault by passing the forged account `BankAccount`. 

@@ -27,8 +27,6 @@ pub struct IdentityAccount {
     pub authority: Pubkey,
 }
 
-entrypoint!(process_instruction);
-
 pub fn process_instruction(
     program_id: &Pubkey,
     accounts: &[AccountInfo],
@@ -76,11 +74,11 @@ pub fn process_instruction(
 
 3. The program then performs three crucial checks:
 
-    - **Signer Check** (Line 19): It verifies if the signer account is a signer of the transaction by checking the `is_signer` field.
+    - **Signer Check** (Line 17): It verifies if the signer account is a signer of the transaction by checking the `is_signer` field.
 
-    - **Ownership Check** (Line 23): It ensures that the `identity_account` is associated with the correct program by checking if its owner field matches the `program_id`.
+    - **Ownership Check** (Line 21): It ensures that the `identity_account` is associated with the correct program by checking if its owner field matches the `program_id`.
 
-    - **Logic Check** (Line 28): It validates that the signer is the rightful `authority` of the `identity_account`.
+    - **Logic Check** (Line 26): It validates that the signer is the rightful `authority` of the `identity_account`.
 
 4. After passing all checks, the program increments the `counter` field of the `IdentityAccount` struct and then serializes it back to the account data.
 
@@ -90,4 +88,4 @@ The **Ownership Check** in the provided code could be omitted, as the Solana run
 
 ### Consequence
 
-If the signer check on lines 19 to 21 was missing, anyone could initiate a transaction with any arbitrary `IdentityAccount` and its associated `authority`. The program would increment the counter and update the account regardless of whether the authority has signed the transaction.
+If the signer check on lines 17 to 19 was missing, anyone could initiate a transaction with any arbitrary `IdentityAccount` and its associated `authority`. The program would increment the counter and update the account regardless of whether the authority has signed the transaction.
