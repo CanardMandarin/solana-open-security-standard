@@ -109,7 +109,7 @@ The place_order instruction is the main focus of the explanation:
 
     - **Ownership Check** (Line 43): It ensures that the `order_account` and `product_account` are owned by the correct program. It prevents an user from submitting an account that would a valid product id but a different price.
 
-    - **Account Confusion Check** (Line 48): It validates that the `discriminator` field of the Product struct matches the constant `PRODUCT_DISCRIMINATOR`. This check is intended to ensure that the product_account is indeed of type Product.
+    - **Account Confusion Check** (Line 48): It validates that the `discriminator` field of the `Product` struct matches the constant `PRODUCT_DISCRIMINATOR`. This check is intended to ensure that the `product_account` is indeed of type `Product`.
 
     - **Logic Check** (Line 53): It ensures that the `order_account` is empty by verifying if the `discriminator` field is zero.
 
@@ -123,8 +123,18 @@ The **Signer Check** in the provided code could technically be omitted, as the t
 
 ### Consequence
 
-If the account confusion check was missing on line (Line 48), the program would not be able to correctly distinguish between different account types (Product and Order). 
+In the absence of `discriminator` fields and proper account confusion checks, a potential security vulnerability arises, enabling malicious users to substitute a legitimate `product_account` with an arbitrary `order_account`. This exploit becomes possible due to the identical length of the `Order` and `Product` structs.
 
-A malicious user could place an order by passing an order account instead of the product account. This would be possible because the Order and Product have the exact same length
+Consider the scenario with the following product:
 
+![small_image](/img/account_validation/account_confusion_0.png)
 
+If a genuine user places an order for this product, specifying a quantity of 2, they would be required to pay 7000 lamports (2 * 3500), leading to the creation of an account to store the order details, as shown here:
+
+![](/img/account_validation/account_confusion_1.png)
+
+However, an attacker could potentially take advantage of the absence of discriminator fields and account confusion checks. By attempting to place an order with an excessive quantity, let's say 100, and deliberately providing the previous `Order` account instead of the correct `Product` account, the program would mistakenly deserialize the `Order` account as a `Product`.
+
+As a result, the malicious user would only be charged 200 lamports (instead of the appropriate 100 * 3500), and the program would inadvertently create a new order using the manipulated data, as depicted in the illustration below:
+
+![](/img/account_validation/account_confusion_2.png)
