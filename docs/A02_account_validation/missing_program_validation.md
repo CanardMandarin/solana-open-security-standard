@@ -113,7 +113,7 @@ pub fn process_instruction(
 
     - **Account Check** (Line 31): It ensures that the `mint` account is indeed a [Mint](https://docs.rs/spl-token/4.0.0/spl_token/state/struct.Mint.html) and not a [Token Account](https://docs.rs/spl-token/4.0.0/spl_token/state/struct.Account.html), as both account are created by the Token Program.
 
-    - **PDA Check** (Line 33): It verifies that the `metadata` account is associated the to given `mint`. Metadata accounts are PDA derived from the mint, therefore programs have to ensure that metadata accounts are associated with the right mint. In this scenario, the check could be omitted as the Metadata Program will do it when called.
+    - **PDA Check** (Line 33): It verifies that the `metadata` account is associated the to given `mint`. Metadata accounts are PDA derived from the mint, therefore programs have to ensure that metadata accounts are associated with the right mint. In this scenario, the check could be omitted as the Metadata program will do it when called.
 
     - **Logic Check** (Line 37): It validates that the `authority` account is the rightful authority.
 

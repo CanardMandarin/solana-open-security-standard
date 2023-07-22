@@ -53,7 +53,7 @@ pub fn process_instruction(
         return Err(ProgramError::InvalidAccountData);
     }
 
-    identity.counter += 1;
+    identity.counter = identity.counter.checked_add(1);
     identity.serialize(&mut &mut account.data.borrow_mut()[..])?;
 
     Ok(())

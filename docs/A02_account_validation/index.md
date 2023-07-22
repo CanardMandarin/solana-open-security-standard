@@ -20,8 +20,8 @@ Account Validation vulnerabilities have been categorized into distinct subclasse
 
 1. [Missing Signer Check](./missing_signer_check.md)
 2. [Missing Ownership Check](./missing_ownership_check.md)
-3. [Missing Program Validation](./missing_ownership_check.md)
-4. [Account Confusion](./missing_ownership_check.md)
+3. [Missing Program Validation](./missing_program_validation.md)
+4. [Account Confusion](./account_confusion.md)
 
 ## References 
 
