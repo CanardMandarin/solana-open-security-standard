@@ -2,9 +2,13 @@
 
 ## Metrics
 
+<center>
+
 | Incidence Rate | Average Severity (/5) | Score      |
 |----------------|-----------------------|------------|
-|     78,05%     |         2.476         |   4.7877   |
+|     78.05%     |         2.476         |   4.7877   |
+
+</center>
 
 ## Description
 

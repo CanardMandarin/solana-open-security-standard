@@ -48,6 +48,17 @@ const sidebars = {
         }
       ],
     },
+    {
+      type: "category",
+      label: "A02 - Account Validation",
+      link: { type: "doc", id: "A02_account_validation/index" },
+      items: [
+        "A02_account_validation/missing_signer_check",
+        "A02_account_validation/missing_ownership_check",
+        "A02_account_validation/missing_program_validation",
+        "A02_account_validation/account_confusion",
+      ],
+    },
   ],
 };
 
