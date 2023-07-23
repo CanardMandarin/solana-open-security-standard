@@ -114,7 +114,7 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} Solana Open Security Standard`,
       },
       prism: {
-        additionalLanguages: ["rust"],
+        additionalLanguages: ["rust", "toml"],
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
