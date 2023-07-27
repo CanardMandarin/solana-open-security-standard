@@ -27,8 +27,93 @@ overflow-checks = true
 ```
 :::
 
-# References
+:::caution
+Enabling `overflow-checks` in a program can significantly increase the compute units consumed during execution.
+:::
 
+## Example 1: Native Rust Program
+
+### Context
+
+Let's analyze the following program and then explore the consequences that an overflow could cause.
+
+```rust showLineNumbers
+#[derive(BorshSerialize, BorshDeserialize, Debug)]
+pub struct DepositAccount {
+    pub authority: Pubkey,
+    pub deposit: u64,
+}
+
+pub static FEE: u64 = 10_000;
+
+fn withdraw_collateral(program_id: &Pubkey, accounts: &[AccountInfo], amount: u64) -> ProgramResult {
+    let account_iter = &mut accounts.iter();
+
+    let signer = next_account_info(accounts_iter)?;
+    let deposit_account = next_account_info(account_iter)?;
+
+    if !signer.is_signer {
+        return Err(ProgramError::MissingRequiredSignature);
+    }
+
+    if *deposit_account.owner != program_id {
+        return Err(ProgramError::InvalidAccountOwner);
+    }
+
+    let mut deposit = DepositAccount::try_from_slice(&deposit_account.data.borrow())?;
+    if *signer.key != deposit.authority {
+        return Err(ProgramError::InvalidAccountData);
+    }
+
+    let withdraw = amount.checked_add(FEE)?;
+    if amount == 0 || withdraw > deposit {
+        return Err(ProgramError::InvalidInstructionData);
+    }
+
+    deposit = deposit.checked_sub(withdraw);
+    deposit.serialize(&mut &mut deposit_account.data.borrow_mut()[..])?;
+
+    // ...
+    // Withdraw and transfer fees
+
+    // msg!("Transferring {:} to signer", amount);
+    // transfer(amount);
+
+    // msg!("Transferring {:} to protocol", FEE);
+    // transfer(FEE);
+    // ...
+
+    Ok(())
+}
+```
+
+### Program Analysis
+
+This code defines a program for withdrawing collateral from a `DepositAccount`. Let's analyze the code step by step:
+
+
+1. `DepositAccount`: A struct representing the account type to store deposit-related information. It includes two fields: `authority` (a Pubkey representing the account's authority) and `deposit` (an unsigned 64-bit integer representing the deposited amount).
+
+2. The program performs several checks to ensure security:
+
+    - **Signer Check** (Line 17): It verifies if the signer account is a signer of the transaction by checking the `is_signer` field.
+
+    - **Ownership Check** (Line 22): It ensures that the `deposit_account` is associated with the correct program by checking if its `owner` field matches the program's public key.
+
+    - **Logic Check** (Line 27): The program deserializes the `DepositAccount` data from the `deposit_account` and checks if the `signer` is the rightful `authority` of the account.
+
+
+3. The function calculates the withdrawal amount plus the fee and ensures that the withdrawal amount is not zero and is less than or equal to the current deposit in the account.
+
+4. If all the checks pass, the program subtracts the withdrawal amount and fee from the deposit, and the updated data is serialized back to the `deposit_account`.
+
+### Consequence
+
+Without the `checked_add` on line 21, the calculation could potentially lead to an overflow. Since the `amount` variable is a user-supplied value, a malicious user might intentionally provide a value close to the maximum representable value for a u64. If `U64::max` is added with 5,000, the arithmetic operation will overflow, resulting in a much smaller value for the `withdraw` variable.
+
+As a consequence, the logic test `amount == 0 || withdraw > deposit` will evaluate to false, and the program will mistakenly transfer a significant number of tokens to the signer.
+
+# References
 
 - [Rust Doc: Operator expressions overflow](https://doc.rust-lang.org/reference/expressions/operator-expr.html#overflow)
 - [Rust Doc: Data type overflow](https://doc.rust-lang.org/book/ch03-02-data-types.html#integer-overflow)
