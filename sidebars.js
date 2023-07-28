@@ -66,7 +66,6 @@ const sidebars = {
       items: [
         "A03_arithmetic/integer_overflow",
         "A03_arithmetic/rounding_errors",
-        "A03_arithmetic/loss_of_precision",
       ],
     },
   ],

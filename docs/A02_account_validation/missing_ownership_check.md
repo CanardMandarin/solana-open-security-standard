@@ -78,7 +78,7 @@ pub fn process_instruction(
 
 3. The program performs several checks to ensure security and proper execution:
 
-    - **Signer Check** (Line 17): It verifies if the signer account is a signer of the transaction by checking the `is_signer`` field.
+    - **Signer Check** (Line 17): It verifies if the signer account is a signer of the transaction by checking the `is_signer` field.
 
     - **Ownership Check** (Line 21): It ensures that the `bank_account` is associated with the correct program by checking if its `owner` field matches the program's public key.
 

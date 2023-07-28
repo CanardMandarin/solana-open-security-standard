@@ -42,7 +42,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            "https://github.com/CanardMandarin/solana-open-security-standard/tree/main/docs",
+            "https://github.com/CanardMandarin/solana-open-security-standard/tree/main",
         },
 
         theme: {

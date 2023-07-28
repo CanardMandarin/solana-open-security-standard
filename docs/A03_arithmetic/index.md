@@ -18,4 +18,3 @@ This class consists of three subclasses, each highlighting specific arithmetic-r
 
 1. [Integer overflow/underflow](./integer_overflow.md)
 2. [Rounding errors](./rounding_errors.md)
-3. [Loss of precision](./loss_of_precision.md)
