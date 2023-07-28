@@ -59,6 +59,15 @@ const sidebars = {
         "A02_account_validation/account_confusion",
       ],
     },
+    {
+      type: "category",
+      label: "A03 - Arithmetic",
+      link: { type: "doc", id: "A03_arithmetic/index" },
+      items: [
+        "A03_arithmetic/integer_overflow",
+        "A03_arithmetic/rounding_errors",
+      ],
+    },
   ],
 };
 
