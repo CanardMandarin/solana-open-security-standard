@@ -44,8 +44,8 @@ const sidebars = {
         {
           type: "link",
           label: "Patch it! (Coming Soon)",
-          href: "#"
-        }
+          href: "#",
+        },
       ],
     },
     {
@@ -67,6 +67,12 @@ const sidebars = {
         "A03_arithmetic/integer_overflow",
         "A03_arithmetic/rounding_errors",
       ],
+    },
+    {
+      type: "category",
+      label: "A04 - Code quality",
+      link: { type: "doc", id: "A04_code_quality/index" },
+      items: [],
     },
   ],
 };
