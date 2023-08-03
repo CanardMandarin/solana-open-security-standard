@@ -41,11 +41,11 @@ const sidebars = {
       link: { type: "doc", id: "A01_logic_bug/index" },
       items: [
         "A01_logic_bug/example_1",
-        {
-          type: "link",
-          label: "Patch it! (Coming Soon)",
-          href: "#",
-        },
+        // {
+        //   type: "link",
+        //   label: "Patch it! (Coming Soon)",
+        //   href: "#",
+        // },
       ],
     },
     {
@@ -72,6 +72,12 @@ const sidebars = {
       type: "category",
       label: "A04 - Code quality",
       link: { type: "doc", id: "A04_code_quality/index" },
+      items: [],
+    },
+    {
+      type: "category",
+      label: "A05 - Dependencies",
+      link: { type: "doc", id: "A05_dependencies/index" },
       items: [],
     },
   ],
