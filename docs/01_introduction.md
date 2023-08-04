@@ -27,6 +27,4 @@ The security risks within Solana programs have been ranked based on the assessme
 
 **# 06 - Denial of Service:**  Ranked sixth, the Denial of Service class demonstrates a relatively low occurrence. Solana programs, by default, are upgradeable, allowing developers to address and patch Denial of Service issues. However, for non-upgradable programs, it is crucial to exercise caution as these vulnerabilities have the potential to make a program unusable.
 
-**# 07 - Economic:** Ranked seventh, the Economic class has a very low incidence rate. While vulnerabilities within this class are relatively less prevalent, addressing economic-related risks is still important for maintaining the financial integrity of a protocol.
-
 This ranking provides insights into the prioritization and relative significance of different security risk classes for Solana programs. By focusing on classes with higher ranks, developers can allocate resources effectively to address vulnerabilities and improve the overall security posture of the Solana ecosystem.

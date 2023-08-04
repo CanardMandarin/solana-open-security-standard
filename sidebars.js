@@ -80,6 +80,12 @@ const sidebars = {
       link: { type: "doc", id: "A05_dependencies/index" },
       items: [],
     },
+    {
+      type: "category",
+      label: "A06 - Denial of Service",
+      link: { type: "doc", id: "A06_denial_of_service/index" },
+      items: [],
+    },
   ],
 };
 
