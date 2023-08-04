@@ -33,3 +33,15 @@ img[alt=small_image] {
   border: none;
   background: none;
 }
+
+.centered_table {
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#ranking_table tbody > tr > td:last-child::after {
+  content: " /5";
+  font-weight: bold;
+  font-size: 12px;
+}
