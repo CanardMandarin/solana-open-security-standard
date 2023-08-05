@@ -35,7 +35,6 @@ The purpose of extracting these categories from the gathered vulnerabilities is 
 The following classes were established to provide a structured framework for understanding and addressing security concerns within a Solana program:
 
 - Arithmetic
-- Economic
 - Account Validation
 - Dependencies
 - Logic Bug

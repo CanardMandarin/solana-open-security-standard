@@ -34,4 +34,6 @@ To safeguard Solana programs against logic bugs, developers should follow a set 
 
 - **Security Audits:** Engage external security auditors to conduct thorough audits of your codebase. Their expertise and fresh perspective can reveal potential logic bugs and other vulnerabilities that might have been overlooked.
 
+- **Formal Verification:** Consider using formal verification techniques to mathematically prove the correctness of your program's logic. It involves creating mathematical models and verifying that the code aligns with its intended specifications. While resource-intensive, formal verification offers high confidence in code correctness, making it valuable for critical components.
+
 By implementing these preventive measures and fostering a security-conscious development culture, developers can significantly reduce the likelihood of logic bugs. Proactive efforts to ensure code correctness will help build a more secure and reliable ecosystem for decentralized applications on Solana.

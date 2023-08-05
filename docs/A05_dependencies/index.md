@@ -23,7 +23,3 @@ To mitigate these risks, it is essential to adopt a robust dependency management
 :::info
 Developers can use `cargo audit` to quickly scan a project's dependencies for vulnerabilities: https://github.com/RustSec/rustsec/tree/main/cargo-audit
 :::
-
-:::info
-Github projects can use Dependabot to monitor vulnerabilities in dependencies and keep dependencies up-to-date: https://docs.github.com/en/code-security/dependabot
-:::

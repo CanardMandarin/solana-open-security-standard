@@ -74,7 +74,7 @@ Pay close attention to how the **tick_lower_index** and **tick_upper_index** val
 </details>
 
 <details>
-<summary>Spoiler</summary>
+<summary>Solution</summary>
 
 During the security audit of the Whirlpools program, a vulnerability was discovered in the **open_position** function. It failed to validate whether the **tick_lower_index** was **smaller** than the **tick_upper_index**, allowing attackers to manipulate these values and create positions with invalid price range boundaries. 
 

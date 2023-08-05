@@ -8,6 +8,14 @@ The "Missing Ownership Check" is a security flaw that occurs when a program fail
 
 Preventing "Missing Ownership Check" vulnerabilities in Solana programs is straightforward. Developers should verify the ownership of each account involved in a transaction by checking the `owner` field of the _[AccountInfo](https://docs.rs/solana-program/latest/solana_program/account_info/struct.AccountInfo.html)_ struct to confirm that it is legitimately owned by the intended program.
 
+:::info
+Changing the owner of an account in Solana requires specific conditions. The owner of the account is the only entity with the privilege to execute this operation, but even then, certain conditions must be met:
+
+- The account must be writable.
+- The account cannot have executable permissions. 
+- The account's data must be either zero-initialized or empty.
+:::
+
 ## Example 1: Native Rust Program
 
 ### Context
@@ -72,7 +80,7 @@ pub fn process_instruction(
 
 ### Program Analysis
 
-1. The `BankAccount` struct contains a single field `authority``, which stores a `Pubkey`` representing the authority allowed to withdraw lamports from the vault.
+1. The `BankAccount` struct contains a single field `authority`, which stores a `Pubkey`` representing the authority allowed to withdraw lamports from the vault.
 
 2. The function begins by obtaining the first three accounts from the accounts array - `signer`, `bank_account` and `vault`.
 

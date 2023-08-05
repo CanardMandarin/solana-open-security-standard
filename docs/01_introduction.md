@@ -15,9 +15,22 @@ This document is free and open to anyone interested in Solana programs security.
 
 The security risks within Solana programs have been ranked based on the assessment of various vulnerability classes. A total of **243 vulnerabilities** were extracted from **41 audit reports** and **publicly known exploits**, forming the basis for this ranking.
 
-**# 01 - Logic Bug:** Ranked first, the Logic Bug class exhibits the highest incidence rate and severity among the vulnerability classes. With a significant incidence rate of 78,05%, this class represents a critical security risk. Logic bugs can lead to unexpected behaviors and are crucial to address due to their potential impact on a program's security.
+<div class="centered_table" id="ranking_table">
 
-**# 02 - Account Validation:** Ranked second, the Account Validation class demonstrates a high incidence rate and severity. Several publicly known security incidents within the Solana ecosystem have been attributed to vulnerabilities related to account validation, this class also represents a significant security risk. Implementing proper account validation mechanisms is essential to safeguard the integrity and security of any Solana program.
+| **Position** | **Vulnerability Class** | **Incidence Rate** | **Average Severity** |
+|--------------|-------------------------|--------------------|----------------------|
+| **1**        | Logic Bug               | 78.05%             | 2.47                |
+| **2**        | Account Validation      | 65.85%             | 2.42                 |
+| **3**        | Arithmetic              | 51,22%             | 2.45                 |
+| **4**        | Code Quality            | 70.73%             | 1.87                 |
+| **5**        | Dependencies            | 29.27%             | 1.78                 |
+| **6**        | Denial of Service       | 12.20%             | 2.75                 |
+
+</div>
+
+**# 01 - Logic Bug:** Ranked first, the Logic Bug class exhibits the highest incidence rate and severity among the vulnerability classes. With a significant incidence rate of 78,05%, this class represents a critical security risk.
+
+**# 02 - Account Validation:** Ranked second, the Account Validation class demonstrates a high incidence rate and severity. Several publicly known security incidents within the Solana ecosystem have been attributed to vulnerabilities related to account validation. Implementing proper account validation mechanisms is essential to safeguard the integrity and security of any Solana program.
 
 **# 03 - Arithmetic:** Ranked third, the Arithmetic class shows a moderate occurrence and incidence rate. Although not as prevalent as the Logic Bug or Account Validation classes, vulnerabilities within the Arithmetic class can still pose security risks that need attention. Proper handling of mathematical operations is essential to prevent computational errors and ensure the integrity of calculations.
 
