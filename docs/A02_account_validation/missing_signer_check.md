@@ -62,9 +62,8 @@ pub fn process_instruction(
 ```
 
 :::info
- The program intentionally omits certain features to keep it small and compact. The provided code assumes that the some **IdentityAccount**  accounts already exists with the authority field appropriately set.
+ The program intentionally omits certain features to keep it small and compact. The provided code assumes that some **IdentityAccount**  accounts already exists with the authority field appropriately set.
 :::
-
 
 ### Program Analysis
 
