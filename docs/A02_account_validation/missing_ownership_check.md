@@ -1,3 +1,8 @@
+---
+description: Learn how to prevent the Missing Ownership Check vulnerability in Solana programs.
+keywords: [Missing Program Validation, Solana program, Cross Program Invocation, program ID verification, validation, Solana vulnerability]
+---
+
 # Missing Ownership Check
 
 ## Description

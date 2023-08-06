@@ -1,14 +1,19 @@
+---
+description: Learn how to ensure secure dependency management in your Solana programs by adopting best practices.
+keywords: [Dependency Management, Solana programs, third-party libraries, deprecated dependencies, unaudited dependencies, Solana vulnerability.]
+---
+
 # A05 - Dependencies
 
 ## Metrics
 
-<center>
+<div class="centered_table metric_table">
 
-| Incidence Rate | Average Severity (/5) | Score      |
+| Incidence Rate | Average Severity      | Score      |
 |----------------|-----------------------|------------|
 |     29.27%     |         1.785         |   0.9333   |
 
-</center>
+</div>
 
 ## Description
 

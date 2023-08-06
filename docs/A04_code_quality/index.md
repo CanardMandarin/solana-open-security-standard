@@ -1,14 +1,19 @@
+---
+description: Learn how to improve the code quality of your Solana programs by implementing best practices and preventive measures.
+keywords: [Code Quality, Solana programs, coding standards, naming conventions, automated tools, linters, documentation, testing, test coverage, prevent bugs, improve reliability, best practices, preventive measures, Solana vulnerability]
+---
+
 # A04 - Code Quality
 
 ## Metrics
 
-<center>
+<div class="centered_table metric_table">
 
-| Incidence Rate | Average Severity (/5) | Score      |
+| Incidence Rate | Average Severity      | Score      |
 |----------------|-----------------------|------------|
 |     70.73%     |         1.876         |   2.4917   |
 
-</center>
+</div>
 
 ## Description
 

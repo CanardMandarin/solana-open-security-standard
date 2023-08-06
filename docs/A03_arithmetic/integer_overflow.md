@@ -1,3 +1,8 @@
+---
+description: Learn how to prevent "Integer Overflow & Underflow" vulnerabilities in Solana programs. This vulnerability occurs when arithmetic operations exceed the maximum or minimum representable value, leading to unintended outcomes.
+keywords: [Integer Overflow, Integer Underflow, Solana programs, arithmetic vulnerabilities, defensive programming, checked math, checked casts, overflow checks, arithmetic operations, Solana vulnerability]
+---
+
 # Integer Overflow & Underflow
 
 ## Description

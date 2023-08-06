@@ -1,14 +1,19 @@
+---
+description: Learn how to prevent the "Arithmetic" class of vulnerabilities in Solana programs. This category encompasses issues related to numerical calculations and operations, including integer overflow/underflow and rounding errors.
+keywords: [Arithmetic vulnerabilities, Solana programs, numeric calculations, integer overflow, integer underflow, rounding errors, numeric types, data validation, miscalculations, Solana vulnerability]
+---
+
 # A03 - Arithmetic
 
 ## Metrics
 
-<center>
+<div class="centered_table metric_table">
 
-| Incidence Rate | Average Severity (/5) | Score      |
+| Incidence Rate | Average Severity      | Score      |
 |----------------|-----------------------|------------|
 |     51.22%     |        2.4583         |   3.0954   |
 
-</center>
+</div>
 
 ## Description
 

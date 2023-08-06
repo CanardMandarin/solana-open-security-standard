@@ -1,3 +1,8 @@
+---
+description: Learn how to prevent Missing Signer Check vulnerabilities in Solana programs.
+keywords: [Solana, Missing Signer Check, Signer Validation, Solana Program, Security, Vulnerabilities]
+---
+
 # Missing Signer Check
 
 ## Description

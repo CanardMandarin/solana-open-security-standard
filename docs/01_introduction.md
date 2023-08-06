@@ -1,4 +1,6 @@
 ---
+description: Learn about the Solana Open Security Standard (SOSS), a comprehensive and neutral security awareness standard for Solana programs.
+keywords: [Solana, security standard, SOSS, security risks, vulnerability classes, Logic Bug, Account Validation, Arithmetic, Code Quality, Dependencies, Denial of Service, Solana programs, security awareness, Solana ecosystem, mitigating risks]
 ---
 
 # Introduction
@@ -19,7 +21,7 @@ The security risks within Solana programs have been ranked based on the assessme
 
 | **Position** | **Vulnerability Class** | **Incidence Rate** | **Average Severity** |
 |--------------|-------------------------|--------------------|----------------------|
-| **1**        | Logic Bug               | 78.05%             | 2.47                |
+| **1**        | Logic Bug               | 78.05%             | 2.47                 |
 | **2**        | Account Validation      | 65.85%             | 2.42                 |
 | **3**        | Arithmetic              | 51,22%             | 2.45                 |
 | **4**        | Code Quality            | 70.73%             | 1.87                 |

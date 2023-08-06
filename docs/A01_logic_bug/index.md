@@ -1,14 +1,20 @@
+---
+description: Learn how to safeguard Solana programs against logic bugs. Follow best practices, including thorough design, unit testing, code reviews, and formal verification, to prevent unexpected behavior and potential security loopholes.
+keywords: [Solana programs, logic bugs, prevent logic bugs, best practices, coding standards, unit testing, code reviews, formal verification, security loopholes, decentralized applications, Solana development]
+---
+
+
 # A01 - Logic Bug
 
 ## Metrics
 
-<center>
+<div class="centered_table metric_table">
 
-| Incidence Rate | Average Severity (/5) | Score      |
+| Incidence Rate |   Average Severity    | Score      |
 |----------------|-----------------------|------------|
 |     78.05%     |         2.476         |   4.7877   |
 
-</center>
+</div>
 
 ## Description
 

@@ -1,4 +1,6 @@
 ---
+description: Learn about the comprehensive methodology used to establish the Solana Open Security Standard, which relies on publicly available data for transparency and reproducibility.
+keywords: [Solana Open Security Standard, methodology, data collection, security audits, public exploits, vulnerability classification, vulnerability scoring, incidence rate, average severity]
 ---
 
 # Methodology

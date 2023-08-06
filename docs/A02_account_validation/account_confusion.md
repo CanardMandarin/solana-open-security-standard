@@ -1,3 +1,8 @@
+---
+description: Learn how to prevent the Account Confusion vulnerability in Solana programs. 
+keywords: [Account Confusion, Solana program, data structure validation, type-checking, Solana vulnerability, ownership validation, discriminator]
+---
+
 # Account Confusion
 
 ## Description

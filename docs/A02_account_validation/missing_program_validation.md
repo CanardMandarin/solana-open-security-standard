@@ -1,3 +1,8 @@
+---
+description: Learn how to prevent the Missing Program Validation vulnerability in Solana programs. 
+keywords: [Missing Program Validation, Solana program, Cross Program Invocation, program ID verification, validation, Solana vulnerability]
+---
+
 # Missing Program Validation
 
 ## Description

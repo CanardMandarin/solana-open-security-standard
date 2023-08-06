@@ -1,3 +1,8 @@
+---
+description: Learn how to prevent "Rounding Errors" in Solana programs. Rounding errors occur in approximate arithmetic when calculations are performed with limited precision, leading to small discrepancies that can accumulate and impact the accuracy of computations.
+keywords: [Rounding Errors, Solana programs, approximate arithmetic, numerical precision, rounding techniques, cumulative errors, Solana vulnerability]
+---
+
 # Rounding Errors
 
 Rounding errors occur in approximate arithmetic when a calculation is performed using a limited number of digits or precision, leading to an approximation of the exact result. In contrast to exact arithmetic, which yields precise results, approximate arithmetic introduces small discrepancies due to the truncation or rounding of numbers.

@@ -1,14 +1,19 @@
+---
+description: Learn how to prevent Denial of Service (DoS) vulnerabilities in your Solana programs.
+keywords: [Denial of Service, DoS vulnerabilities, Solana programs, service interruptions, risk prevention, design flaws, proper validation, error handling, code security, Solana vulnerability]
+---
+
 # A06 - Denial of Service
 
 ## Metrics
 
-<center>
+<div class="centered_table metric_table">
 
-| Incidence Rate | Average Severity (/5) | Score      |
+| Incidence Rate | Average Severity      | Score      |
 |----------------|-----------------------|------------|
 |     12.20%     |         2.750         |   0.9222   |
 
-</center>
+</div>
 
 # Description
 

@@ -1,4 +1,6 @@
 ---
+description: Join our community in contributing to the security standard's improvement. Help us build a comprehensive and accurate data set by sharing new reports and known exploits. Together, we can create a more objective and effective security standard.
+keywords: [Call for data, security standard, contribute to data set, improve methodology, community contributions, data quality]
 ---
 
 # Call For Data

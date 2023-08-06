@@ -1,14 +1,19 @@
+---
+description: Learn the importance of account validation in Solana programs to ensure security. Discover various vulnerabilities, including Missing Signer Check, Missing Ownership Check, Missing Program Validation, and Account Confusion.
+keywords: [Solana account validation, Solana programs, security risks, vulnerabilities, Missing Signer Check, Missing Ownership Check, Missing Program Validation, Account Confusion]
+---
+
 # A02 - Account Validation
 
 ## Metrics
 
-<center>
+<div class="centered_table metric_table">
 
-| Incidence Rate | Average Severity (/5) | Score      |
+| Incidence Rate | Average Severity      | Score      |
 |----------------|-----------------------|------------|
 |     65.85%     |         2.441         |   3.9266   |
 
-</center>
+</div>
 
 ## Description
 

@@ -40,7 +40,8 @@ img[alt=small_image] {
   margin-right: auto;
 }
 
-#ranking_table tbody > tr > td:last-child::after {
+#ranking_table tbody > tr > td:last-child::after,
+.metric_table tbody > tr > td:nth-of-type(2)::after {
   content: " /5";
   font-weight: bold;
   font-size: 12px;
