@@ -22,7 +22,7 @@ Additionally, the data collection process involved the analysis of multiple expl
 By including both security audits and public exploits in the data collection process, the methodology ensures that the security standard does not rely on theoretical vulnerabilities but takes into account practical exploitation scenarios. This approach allows the standard to address potential risks and provide mitigation strategies that are grounded in the actual security landscape of the Solana ecosystem.
 
 The reports used can found in the following repository: [Solana Open Security Standard Reports](https://github.com/CanardMandarin/solana-open-security-standard-reports).
-The vulnerabilities extracted are available in the following google sheet: [spreadsheet](https://TODO/)
+The vulnerabilities extracted are available in the following google sheet: [Google Spreadsheet](https://docs.google.com/spreadsheets/d/1h-FR17KilOYrlh9FDe9gYc1-BR5ok_-oMdxZElNSFEo/edit#gid=0)
 
 :::info
 While collecting data, a disparity in severity levels was observed for identical vulnerabilities. The following issue has be opened to discuss this problem: [Severity differences](https://github.com/CanardMandarin/solana-open-security-standard/issues/1).
